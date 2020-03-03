@@ -1,8 +1,8 @@
 {
-  "name": "NullSuck",
+  "name": "nurusaku-ai",
   "version": "1.0.0",
-  "description": "My splendid Nuxt.js project",
-  "author": "NomuraShunsuke",
+  "description": "Sample project for Nurusaku-ai",
+  "author": "pco2699",
   "private": true,
   "scripts": {
     "dev": "nuxt",

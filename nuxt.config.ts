@@ -35,7 +35,7 @@ const config: NuxtConfiguration = {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
+  devModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify'

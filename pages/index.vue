@@ -16,7 +16,7 @@ import {Vue, Component} from 'nuxt-property-decorator'
 
 @Component({
   components: {
-    FormCard: () => import('../components/FormCard.vue')
+    FormCard: () => import('~/components/FormCard.vue')
   }})
   export default class Index extends Vue { }
 </script>
