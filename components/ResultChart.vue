@@ -1,6 +1,10 @@
 <template>
   <div>
     <div id="chartdiv">
+      <div id="point">
+        <span class="caption">美味しいワインである確率</span>
+        <span class="display-3">{{ result }}%</span>
+      </div>
     </div>
   </div>
 </template>
@@ -14,7 +18,11 @@ import am4themesAnimated from '@amcharts/amcharts4/themes/animated';
 import am4themesDataviz from '@amcharts/amcharts4/themes/dataviz';
 
 @Component export default class ResultChart extends Vue {
+  private result = 34;
+
   mounted() {
+
+  this.result = 34;
 
   /* Chart code */
   // Themes begin
@@ -24,7 +32,6 @@ import am4themesDataviz from '@amcharts/amcharts4/themes/dataviz';
 
   // Create chart instance
   let chart = am4core.create("chartdiv", am4charts.RadarChart);
-  chart.scrollbarX = new am4core.Scrollbar();
 
   let data = [];
 
@@ -44,7 +51,7 @@ import am4themesDataviz from '@amcharts/amcharts4/themes/dataviz';
   categoryAxis.tooltip.disabled = true;
   categoryAxis.renderer.minHeight = 110;
   categoryAxis.renderer.grid.template.disabled = true;
-  //categoryAxis.renderer.labels.template.disabled = true;
+  categoryAxis.renderer.labels.template.disabled = true;
   let labelTemplate = categoryAxis.renderer.labels.template;
   labelTemplate.radius = am4core.percent(-60);
   labelTemplate.location = 0.5;
@@ -85,3 +92,23 @@ import am4themesDataviz from '@amcharts/amcharts4/themes/dataviz';
   }
 }
 </script>
+
+<style scoped>
+  #chartdiv {
+    height: 450px;
+  }
+  #point{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 240px;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+</style>
+
