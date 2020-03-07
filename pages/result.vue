@@ -14,7 +14,7 @@ import {Vue, Component} from 'nuxt-property-decorator'
 
 @Component({
   components: {
-    ResultChart: () =>import('~/components/ResultChart.vue'),
+    ResultChart: () => import('~/components/ResultChart.vue'),
     ResultList: () => import('~/components/ResultList.vue')
   }})
   export default class Result extends Vue { }
