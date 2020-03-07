@@ -24,7 +24,6 @@ import am4themesDataviz from '@amcharts/amcharts4/themes/dataviz';
 
   // Create chart instance
   let chart = am4core.create("chartdiv", am4charts.RadarChart);
-  core.useTheme(am4themes_animated);
   chart.scrollbarX = new am4core.Scrollbar();
 
   let data = [];
@@ -38,7 +37,7 @@ import am4themesDataviz from '@amcharts/amcharts4/themes/dataviz';
   chart.innerRadius = am4core.percent(50);
 
   // Create axes
-  let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+  let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis<am4charts.AxisRendererCircular>());
   categoryAxis.dataFields.category = "category";
   categoryAxis.renderer.grid.template.location = 0;
   categoryAxis.renderer.minGridDistance = 30;
@@ -51,7 +50,7 @@ import am4themesDataviz from '@amcharts/amcharts4/themes/dataviz';
   labelTemplate.location = 0.5;
   labelTemplate.relativeRotation = 90;
 
-  let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+  let valueAxis = chart.yAxes.push(new am4charts.ValueAxis<am4charts.AxisRendererRadial>());
   valueAxis.renderer.grid.template.disabled = true;
   valueAxis.renderer.labels.template.disabled = true;
   valueAxis.tooltip.disabled = true;
